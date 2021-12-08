@@ -13,7 +13,7 @@
 
 ## 👥 Sobre o projeto
 
-Esse projeto foi um desafio proposto no bootcamp ingite. Nós recebemos uma interface pronta e precisamos adicionar funcionalidades nela. Como a de listar, deletar e atualizar um produto,
+Esse projeto foi um desafio proposto no bootcamp ingite. Nós recebemos uma interface pronta e tivemos que adicionar funcionalidades nela. Como a de listar, deletar e atualizar um produto,
 adicionar no carrinho, calcular preço. Foi um ótimo desafio para aprender a trabalhar com projetos já prontos, bem focado no que o mercado busca.
 
 ## 💻 Técnologias usadas:
