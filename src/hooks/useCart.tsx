@@ -1,7 +1,7 @@
-import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import { createContext, ReactNode, useContext, useState } from 'react';
 import { toast } from 'react-toastify';
 import { api } from '../services/api';
-import { Product, Stock } from '../types';
+import { Product } from '../types';
 
 interface CartProviderProps {
   children: ReactNode;
@@ -53,6 +53,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
       if(amount > stockAmount) { // Verifica se o valor atual do carrinho ultrapassa o valor que existe do produto no estoque;
         toast.error('Quantidade solicitada fora de estoque');
+        return;
       };
 
       /* 
@@ -125,7 +126,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       const stockAmount = stock.data.amount;
 
       if(amount > stockAmount) {
-        toast.error('Erro na alteração de quantidade do produto');
+        toast.error('Erro na alteração de quantidade do produto.');
         return;
       };
 
