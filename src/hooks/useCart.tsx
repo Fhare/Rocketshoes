@@ -65,6 +65,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       */
       if(productExist) {
         productExist.amount = amount;
+
       } else {
         const product = await api.get(`/products/${productId}`);
 
@@ -83,7 +84,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       localStorage.setItem('@RocketShoes:cart', JSON.stringify(updatedCart));
 
     } catch {
-      toast.error('Não foi possível adicionar um tênis');
+      toast.error('Erro na adição do produto');
     }
   };
 
@@ -126,7 +127,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       const stockAmount = stock.data.amount;
 
       if(amount > stockAmount) {
-        toast.error('Erro na alteração de quantidade do produto.');
+        toast.error('Quantidade solicitada fora de estoque');
         return;
       };
 
